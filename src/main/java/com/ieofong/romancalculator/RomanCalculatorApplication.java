@@ -5,7 +5,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.ieofong.romancalculator.service.CalculatorService;
 
-import org.springframework.boot.Banner;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -19,9 +18,6 @@ public class RomanCalculatorApplication  implements CommandLineRunner {
 
 	public static void main(String[] args) throws Exception {
 		SpringApplication.run(RomanCalculatorApplication.class, args);
-//		SpringApplication app = null;
-//		app.setBannerMode(Banner.Mode.OFF);
-//        app.run(args);
 	}
 	
 	//access command line arguments
