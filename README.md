@@ -36,7 +36,10 @@ X
 ### Instruction 
 Follow this instructions if you want to install the [Spring Boot](https://spring.io/guides/gs/spring-boot/).
 
-[Download](https://github.com/ieofong/roman-calculator/archive/master.zip) and unzip the source repository for this project, or clone it using Git:
+[Download](https://github.com/ieofong/roman-calculator/archive/master.zip) and unzip the source repository for this project
+
+or clone it using Git:
+
 `git clone https://github.com/ieofong/roman-calculator.git`
 
 
