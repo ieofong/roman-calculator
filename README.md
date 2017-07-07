@@ -30,15 +30,16 @@ X
 
 ### Prerequisites
 
-* [Java Platform (JDK) 7](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
-* [Apache Maven 3.x](http://maven.apache.org/)
+* [Java Platform (JDK) 1.8](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+* [Apache Maven 3.x](https://maven.apache.org/download.cgi)
 
 ### Instruction 
-Follow the instructions in our main documentation if you want to install the [Spring Boot CLI](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#getting-started-installing-the-cli).
+Follow this instructions if you want to install the [Spring Boot](https://spring.io/guides/gs/spring-boot/).
+[Download](https://github.com/ieofong/roman-calculator/archive/master.zip) and unzip the source repository for this project, or clone it using Git:
+`git clone https://github.com/ieofong/roman-calculator.git`
 
 
 ### Build & Run
------------
-1. open command line and then go to project directory
+1. open command line and cd into project directory
 2. `mvn package`
-3. `java -jar target/roman-calculator-0.0.1-SNAPSHOT.jar "input file path"`
+3. `java -jar target/roman-calculator-0.0.1-SNAPSHOT.jar "path//of//input.txt"`

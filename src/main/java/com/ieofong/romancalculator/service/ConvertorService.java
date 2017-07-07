@@ -5,10 +5,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class ConvertorService {
 
-	public int romanToArabic(String roman) {
+	public int romanToArabic(String roman) throws IllegalArgumentException {
 		
 		if (roman.length() == 0)
-			throw new NumberFormatException("A roman numeral dose not be empty.");
+			throw new IllegalArgumentException("A roman numeral dose not be empty.");
 		
 		roman = roman.toUpperCase();
 		
@@ -17,10 +17,10 @@ public class ConvertorService {
 		return arabic;
 	}
 	
-	public String arabicToRoman(int arabic) {
+	public String arabicToRoman(int arabic) throws IllegalArgumentException {
 		
 		if (arabic < 1 || arabic > 3999) {
-			System.out.println("Number arabic must be between 1 and 3999 ");
+			throw new IllegalArgumentException("Number arabic must be between 1 and 3999.");
 		}
 		
 		String roman = "";

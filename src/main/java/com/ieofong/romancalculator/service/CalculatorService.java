@@ -5,14 +5,10 @@ import com.ieofong.romancalculator.service.ConvertorService;
 import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service
 public class CalculatorService {
-
-	@Value("${name:unknown}")
-    private String name;
 	
 	@Autowired
 	private ConvertorService convertorService;
@@ -25,13 +21,22 @@ public class CalculatorService {
 		  
     	String[] splitOper = problem.split("(?<=[-+*/])|(?=[-+*/])");
     	
+    	if (splitOper.length%2 <= 0) {
+    		return "Cannot calculate propblem incomplete";
+    	}
+    	
     	for (String oper : splitOper) {
     		
     		if ("+-*/".contains(oper)) {
     			operand = oper;
     		}
     		else {
-    			operation = this.convertorService.romanToArabic(oper);
+    			
+    			try {
+    				operation = this.convertorService.romanToArabic(oper);
+    			} catch (IllegalArgumentException e){
+    				System.out.println(e.getMessage());
+    			}
     			
     			if (total <= 0) 
     				total = operation;
@@ -59,8 +64,13 @@ public class CalculatorService {
     		
     	}
 
-		 result = this.convertorService.arabicToRoman(total);
-		 return result;
+    	try {
+    		result = this.convertorService.arabicToRoman(total);
+		} catch (IllegalArgumentException e){
+			System.out.println(e.getMessage());
+		}
+		 
+		return result;
 	}
     
 }
